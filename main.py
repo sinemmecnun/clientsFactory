@@ -10,7 +10,7 @@ def initialize_program():
               '1. Добави клиент\n'
               '2. Изтрий клиент\n'
               '3. Виж всички клиенти\n'
-              '4. Търси клиент по ЕГН\n'
+              '4. Търси клиент\n'
               '5. Изход')
 
         action = int(input())
@@ -26,6 +26,14 @@ def initialize_program():
             break
         else:
             print("Невалиден избор. Опитайте отново")
+            
+        print('Искате ли да продължите?\n'
+              'y - yes or n - no')
+        continue_program = input().lower()
+        if continue_program != 'y':
+            break
+
+        print()
 
 
 initialize_program()
