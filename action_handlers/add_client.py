@@ -1,5 +1,7 @@
 from core.db import all_clients_data
 from core.validators import validate_name, validate_age, validate_egn, validate_iban, validate_phone_number
+from core.db import save_client
+from core.Client import Client
 
 
 def add_client():
@@ -52,7 +54,12 @@ def add_client():
             client_data['phone_number'] = phone_number
             break
 
+
     all_clients_data.append(client_data)
+    save_client(client_data)
+
+    client = Client(name, age, egn, iban, phone_number)
+
 
 
 # all_clients_data.sort(key=lambda x: x[0])

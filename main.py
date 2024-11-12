@@ -2,7 +2,7 @@ from action_handlers.add_client import add_client
 from action_handlers.view_all_clients import view_all_clients
 from action_handlers.delete_client import delete_client
 from action_handlers.search_client import search_client
-
+from core.db import overwrite_data
 
 def initialize_program():
     while True:
@@ -23,6 +23,7 @@ def initialize_program():
         elif action == 4:
             search_client()
         elif action == 5:
+            overwrite_data()
             break
         else:
             print("Невалиден избор. Опитайте отново")
