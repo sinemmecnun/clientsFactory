@@ -1,0 +1,2 @@
+class VipClient(Client):
+    pass
