@@ -1,7 +1,9 @@
 all_clients_data = []
+clients_dict = {}
 # начало на база данни
 
 with open('./db/clients_data.txt', 'r') as clients_data:
+    index = 1
     for single_client in clients_data:
         client = {}
         single_client = single_client.rstrip('\n')
@@ -14,6 +16,8 @@ with open('./db/clients_data.txt', 'r') as clients_data:
         client['phone_number'] = phone_number
 
         all_clients_data.append(client)
+        clients_dict[index] = client
+        index += 1
 
 
 def save_client(client_temp_data):

@@ -3,6 +3,8 @@ from action_handlers.view_all_clients import view_all_clients
 from action_handlers.delete_client import delete_client
 from action_handlers.search_client import search_client
 from core.db import overwrite_data
+from core.db import clients_dict
+
 
 def initialize_program():
     while True:
@@ -38,3 +40,16 @@ def initialize_program():
 
 
 initialize_program()
+
+# Решения на допълнителни задачи от упражнение 6
+# сортиране по ключ
+# myKeys = list(clients_dict.keys())
+# myKeys.sort()
+#
+# sorted_by_key = {i: clients_dict[i] for i in myKeys}
+# print(sorted_by_key)
+
+
+# сортиране по име низходящо
+sorted_by_values = dict(sorted(clients_dict.items(), key=lambda item: item[1]['name'], reverse=True))
+print(sorted_by_values)
